@@ -1,5 +1,5 @@
 var Beanstalkify = require("beanstalkify");
-var secret = require("../secret.json");
+// var secret = require("../secret.json");
 var path = require("path");
 
 var argv = require("yargs").argv;
@@ -18,8 +18,10 @@ var env = argv.env || "test-env";
 
 // Deploy
 var beanstalk = new Beanstalkify({
-	accessKeyId: secret.accessKeyId,
-	secretAccessKey: secret.secretAccessKey,
+	// accessKeyId: secret.accessKeyId,
+	// secretAccessKey: secret.secretAccessKey,
+	accessKeyId: argv.accessKeyId,
+	secretAccessKey: argv.secretAccessKey,
 	region: "ap-southeast-2"
 });
 
