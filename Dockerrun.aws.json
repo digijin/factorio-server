@@ -1,0 +1,20 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [],
+    "containerDefinitions": [
+        {
+            "name": "server",
+            "image": "digijin/factorio-server",
+            "essential": true,
+            "memory": 128,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 34197
+                }
+            ],
+            "links": [],
+            "mountPoints": []
+        }
+    ]
+}
