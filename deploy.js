@@ -13,7 +13,7 @@ var config = {
 // var project = process.argv[2] || "deploytest";
 // var version = process.argv[3] || "1";
 var project = argv.project || "deploytest";
-var version = argv.version || "1";
+var version = argv.packageVersion || "1";
 var env = argv.env || "test-env";
 
 // Deploy

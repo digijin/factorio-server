@@ -14,4 +14,4 @@ jobs:
       - docker push digijin/factorio-server
       - zip -r fac-v${TRAVIS_BUILD_NUMBER}.zip Dockerrun.aws.json .ebextensions
       - ls
-      - node deploy.js --project=fac --version=${TRAVIS_BUILD_NUMBER} --env=myenv --accessKeyId=${AWS_KEY_ID} --secretAccessKey=${AWS_SECRET}
+      - node deploy.js --project=fac --packageVersion=${TRAVIS_BUILD_NUMBER} --env=myenv --accessKeyId=${AWS_KEY_ID} --secretAccessKey=${AWS_SECRET}
