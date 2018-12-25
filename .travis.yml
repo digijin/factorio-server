@@ -1,0 +1,9 @@
+services:
+- docker
+jobs:
+  include:
+    - stage: build
+      script:
+      - wget https://www.factorio.com/get-download/stable/headless/linux64
+      - mv linux64 files/factorio_headless.tar.xz
+      - docker build -t fac .
