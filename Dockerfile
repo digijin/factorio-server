@@ -12,8 +12,10 @@ RUN useradd factorio
 RUN chown -R factorio:factorio /opt/factorio
 
 RUN mkdir /opt/factorio/saves
-RUN mv /tmp/ninjatown.zip /opt/factorio/saves/ninjatown.zip
+# RUN mv /tmp/ninjatown.zip /opt/factorio/saves/ninjatown.zip
 RUN mv /tmp/server-settings.json /opt/factorio/data/server-settings.json
 
+RUN /opt/factorio/bin/x64/factorio --create /opt/factorio/saves/savefile.zip
+
 EXPOSE 34197
-ENTRYPOINT ["/opt/factorio/bin/x64/factorio", "--start-server", "/opt/factorio/saves/ninjatown.zip"]
+ENTRYPOINT ["/opt/factorio/bin/x64/factorio", "--start-server", "/opt/factorio/saves/savefile.zip"]
