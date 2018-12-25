@@ -9,8 +9,9 @@
             "memory": 128,
             "portMappings": [
                 {
-                    "hostPort": 80,
-                    "containerPort": 34197
+                    "hostPort": 34197,
+                    "containerPort": 34197,
+                    "protocol": "udp"
                 }
             ],
             "links": [],
