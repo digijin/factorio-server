@@ -10,5 +10,6 @@ jobs:
       - wget https://www.factorio.com/get-download/stable/headless/linux64
       - mv linux64 files/factorio_headless_x64_0.16.51.tar.xz
       - docker build -t digijin/factorio-server .
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker push digijin/factorio-server
       - zip -r fac-v${TRAVIS_BUILD_NUMBER}.zip Dockerrun.aws.json .ebextensions
