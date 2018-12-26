@@ -1,6 +1,19 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "volumes": [],
+    "volumes": [
+        {
+            "name": "rexray-vol",
+            "dockerVolumeConfiguration": {
+                "autoprovision": true,
+                "scope": "shared",
+                "driver": "rexray/ebs",
+                "driverOpts": {
+                    "volumetype": "gp2",
+                    "size": "5"
+                }
+            }
+        }
+    ],
     "containerDefinitions": [
         {
             "name": "server",
@@ -15,7 +28,12 @@
                 }
             ],
             "links": [],
-            "mountPoints": []
+            "mountPoints": [
+                {
+                    "containerPath": "/opt/storage",
+                    "sourceVolume": "rexray-vol"
+                }
+            ]
         }
     ]
 }
