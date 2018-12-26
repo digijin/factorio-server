@@ -6,7 +6,7 @@
             "name": "server",
             "image": "digijin/factorio-server",
             "essential": true,
-            "memory": 128,
+            "memory": 900,
             "portMappings": [
                 {
                     "hostPort": 34197,
